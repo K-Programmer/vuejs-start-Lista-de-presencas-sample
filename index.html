@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" class="container">
+       
+
+
+        <h1 class="head text-center"> <strong>Lista de presenças</strong></h1>
+        <h5>
+            <strong>Disciplina:</strong> Desenvolvimento de aplicações web
+        </h5>
+
+        <input  type="text" v-model="todo">
+        <input class="button button-black"  type="submit" value="Marcar precenca✔️" @click="guardarTODO">
+
+        <ol>
+            <ol>
+                <li v-for="todo in todos">
+                  {{ todo }}
+                </li>
+              </ol>
+
+
+        </ol>
+        <br>
+        <h5 class="d-flex justify-content-center mt-5">
+            <strong>By    </strong>Kprogrammer
+        </h5>
+      </div>
+
+
+      <script >
+var app = new Vue({
+  el: '#app',
+  data: {
+      todo: '',
+    todos: [
+     'Edmilson Kayce M.Novele💖' ,
+     'Alzira Francisco Xerinda💖' 
+     
+    ]
+  },
+
+  methods:
+{
+    guardarTODO(){
+        this.todos.push(this.todo)
+    }
+
+}
+})
+
+      </script>
+    
+</body>
+</html>
